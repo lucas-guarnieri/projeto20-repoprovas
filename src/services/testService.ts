@@ -24,6 +24,18 @@ async function insertTest(testData: CreateTestData) {
     await testRepository.insert(newTestData);
 }
 
+async function getTestByTeacher() {
+    const tests = await testRepository.getByTeacher();
+    return tests;
+}
+
+async function getTestByDiscipline() {
+    const tests = await testRepository.getByDiscipline();
+    return tests;
+}
+
 export default {
     insertTest,
+    getTestByTeacher,
+    getTestByDiscipline
 }

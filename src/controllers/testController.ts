@@ -9,3 +9,17 @@ export async function createTest(req: Request, res: Response) {
     await testService.insertTest(testData);
     res.sendStatus(201);
 }
+
+export async function getTest(req: Request, res: Response) {
+    const { groupBy } = req.query;
+    if (groupBy === "teachers") {
+        const tests = await testService.getTestByTeacher();
+        return res.send(tests);
+    };
+    if (groupBy === "disciplines") {
+        const tests = await testService.getTestByDiscipline();
+        return res.send(tests);
+    } else {
+        throw { type: "bad_request", message: "bad query" };
+    }
+}

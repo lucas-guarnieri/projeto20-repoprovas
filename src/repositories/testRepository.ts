@@ -13,7 +13,50 @@ async function insert(createTestData: CreateTest) {
     });
 }
 
+async function getByTeacher() {
+    const tests = await prisma.teachersDisciplines.findMany({
+        include: {
+            teacher: {},
+            discipline: {
+                include: {
+                    term: {}
+                }
+            },
+            Test: {
+                include: {
+                    category: {},
+                }
+            },
+        }
+    });
+    return tests;
+}
+
+async function getByDiscipline() {
+    const tests = await prisma.term.findMany({
+        include: {
+            Discipline: {
+                include: {
+                    TeachersDisciplines: {
+                        include: {
+                            Test: {
+                                include: {
+                                    category: true,
+                                },
+                            },
+                            teacher: true,
+                        }
+                    }
+                }
+            }
+        }
+    });
+    return tests;
+}
+
 export default {
     findById,
-    insert
+    insert,
+    getByTeacher,
+    getByDiscipline
 }
