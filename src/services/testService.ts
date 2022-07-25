@@ -14,7 +14,7 @@ async function insertTest(testData: CreateTestData) {
     const existingCategory = await checkRepository.getCategoryById(categoryId);
     if (!existingCategory) throw { type: "not_found", message: "category not exists" };
     const exisitngTeacherDiscipline = await checkRepository.getTeacherDiscipline(teacherId, disciplineId);
-    if (!exisitngTeacherDiscipline) throw { type: "not_found", message: "teacher not assigned to discipline" };
+    if (!exisitngTeacherDiscipline) throw { type: "unauthorized", message: "teacher not assigned to discipline" };
     const newTestData: CreateTest = {
         name,
         pdfUrl,

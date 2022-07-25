@@ -52,11 +52,11 @@ describe("Authorization test suite", () => {
         const login = userFactory.createLogin();
         const user = await userFactory.createUserOnDb(login);
 
-        const response = await supertest(app).post(`/sign-in`).send({
+        const res = await supertest(app).post(`/sign-in`).send({
             email: user.email,
             password: "invalidpassword"
         });
-        expect(response.status).toBe(401);
+        expect(res.status).toBe(401);
     });
 
 });
