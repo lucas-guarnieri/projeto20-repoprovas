@@ -98,6 +98,26 @@ describe("Tests test suite", () => {
         const res = await supertest(app).post("/test").send(testData).set("Authorization", `Bearer ${token}`);
         expect(res.status).toBe(422);
     });
+
+    it("get tests group by disciplines", async () => {
+        const res = await supertest(app).get("/test?groupBy=disciplines");
+        expect(res.status).toBe(200);
+        const tests = res.body.texts;
+        expect(tests).not.toBeNull();
+    });
+
+    it("get tests group by teachers", async () => {
+        const res = await supertest(app).get("/test?groupBy=teachers");
+        expect(res.status).toBe(200);
+        const tests = res.body.texts;
+        expect(tests).not.toBeNull();
+    });
+
+    it("given invalid query for test route, return 400", async () => {
+        const res = await supertest(app).get("/test?groupBy=invalid");
+        expect(res.status).toBe(400);
+    });
+
 })
 
 async function performLogin() {

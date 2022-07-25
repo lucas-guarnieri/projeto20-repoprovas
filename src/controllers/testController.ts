@@ -14,11 +14,11 @@ export async function getTest(req: Request, res: Response) {
     const { groupBy } = req.query;
     if (groupBy === "teachers") {
         const tests = await testService.getTestByTeacher();
-        return res.send(tests);
+        return res.status(200).send({ tests });
     };
     if (groupBy === "disciplines") {
         const tests = await testService.getTestByDiscipline();
-        return res.send(tests);
+        return res.status(200).send({ tests });
     } else {
         throw { type: "bad_request", message: "bad query" };
     }
