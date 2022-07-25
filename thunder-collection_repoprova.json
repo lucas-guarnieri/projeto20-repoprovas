@@ -1,0 +1,125 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "repoprova",
+    "dateExported": "2022-07-25T19:34:49.070Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "0cc2fea4-192f-48d8-8f94-78713b6b1f90",
+            "name": "auth Copy",
+            "containerId": "",
+            "created": "2022-07-24T22:31:48.000Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "bc1d593d-f2af-46b9-96ff-42a7ff9ad19c",
+            "name": "tests",
+            "containerId": "",
+            "created": "2022-07-25T16:05:50.731Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "d130ed01-212f-41c1-9281-c6f3accf1538",
+            "colId": "e6fe0813-9f6c-4f45-aeed-78d0226a19c2",
+            "containerId": "0cc2fea4-192f-48d8-8f94-78713b6b1f90",
+            "name": "sign-up",
+            "url": "localhost:5000/sign-up",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2022-07-24T22:31:48.000Z",
+            "modified": "2022-07-25T19:14:00.847Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"driven@driven.com\",\n    \"password\": \"1234\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bfee529d-318d-4f0e-af0f-551cff2afea8",
+            "colId": "e6fe0813-9f6c-4f45-aeed-78d0226a19c2",
+            "containerId": "bc1d593d-f2af-46b9-96ff-42a7ff9ad19c",
+            "name": "create test",
+            "url": "localhost:5000/test",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2022-07-25T16:05:33.846Z",
+            "modified": "2022-07-25T17:22:40.828Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"prova 1\",\n    \"pdfUrl\": \"fakelink.com\",\n    \"categoryId\": 1,\n    \"teacherId\": 1,\n    \"disciplineId\": 4\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODc2NTMyMH0.I-sEL2CrZ4tTbrMXe2R0lHDDEj1R8KHuKjfds4VXmYE"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d54ab42c-d8fa-428d-ab64-fc10ab74a2e4",
+            "colId": "e6fe0813-9f6c-4f45-aeed-78d0226a19c2",
+            "containerId": "0cc2fea4-192f-48d8-8f94-78713b6b1f90",
+            "name": "login",
+            "url": "localhost:5000/sign-in",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2022-07-24T22:31:48.001Z",
+            "modified": "2022-07-25T19:14:04.827Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"driven@driven.com\",\n    \"password\": \"1234\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4dc88b3b-f482-4ba9-be12-ee5318352d21",
+            "colId": "e6fe0813-9f6c-4f45-aeed-78d0226a19c2",
+            "containerId": "bc1d593d-f2af-46b9-96ff-42a7ff9ad19c",
+            "name": "get test by teacher",
+            "url": "localhost:5000/test?groupBy=teachers",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2022-07-25T17:44:48.204Z",
+            "modified": "2022-07-25T17:45:11.599Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "groupBy",
+                    "value": "teachers",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "7e20aea8-1b03-4577-ab5a-e1daa648172e",
+            "colId": "e6fe0813-9f6c-4f45-aeed-78d0226a19c2",
+            "containerId": "bc1d593d-f2af-46b9-96ff-42a7ff9ad19c",
+            "name": "get test by diciplines",
+            "url": "localhost:5000/test?groupBy=disciplines",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2022-07-25T18:19:25.219Z",
+            "modified": "2022-07-25T18:19:34.773Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "groupBy",
+                    "value": "disciplines",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}
