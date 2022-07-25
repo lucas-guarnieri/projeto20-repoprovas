@@ -1,10 +1,7 @@
-import bcrypt from "bcrypt";
-
 import { prisma } from "../src/config/database.js";
 
 async function main() {
 
-    await prisma.$queryRaw``;
     await prisma.$queryRaw`INSERT INTO terms ("number") VALUES (1)`;
     await prisma.$queryRaw`INSERT INTO terms ("number") VALUES (2)`;
     await prisma.$queryRaw`INSERT INTO terms ("number") VALUES (3)`;
